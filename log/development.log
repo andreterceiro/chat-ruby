@@ -1,0 +1,319 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (191.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (259.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMessages (20170830232340)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170830232340"]]
+  [1m[35m (122.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-08-30 23:53:38.494598"], ["updated_at", "2017-08-30 23:53:38.494598"]]
+  [1m[35m (92.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:05:47 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 2652ms (Views: 2642.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:05:50 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:05:50 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:37:22 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:37:22 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:37:23 -0300
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 1011ms (Views: 994.4ms | ActiveRecord: 0.8ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:37:24 -0300
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:37:24 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:37:24 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:37:27 -0300
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.4ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:37:27 -0300
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:37:27 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:37:27 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:37:32 -0300
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:37:32 -0300
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:37:32 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:37:32 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:37:47 -0300
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 433ms (Views: 430.1ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:37:48 -0300
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:37:48 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:37:48 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:37:50 -0300
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 20ms (Views: 17.1ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:37:50 -0300
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:37:50 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:37:50 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:38:21 -0300
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.1ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:38:21 -0300
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:38:21 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:38:21 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:39:57 -0300
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 441ms (Views: 438.1ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:39:58 -0300
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:39:58 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:39:58 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:40:00 -0300
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.4ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:40:00 -0300
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:40:00 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:40:00 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:41:56 -0300
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 453ms (Views: 452.0ms | ActiveRecord: 0.1ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:41:56 -0300
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:41:57 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:41:57 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:41:59 -0300
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:41:59 -0300
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:41:59 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:41:59 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:45:05 -0300
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:45:05 -0300
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:45:06 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:45:06 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:45:10 -0300
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 0.3ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:45:10 -0300
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:45:10 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:45:10 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:49:20 -0300
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:49:20 -0300
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:49:20 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:49:20 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:49:22 -0300
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:49:23 -0300
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:49:23 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:49:23 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:49:28 -0300
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 33ms (Views: 30.1ms | ActiveRecord: 0.4ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:49:28 -0300
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:49:28 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:49:28 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:52:01 -0300
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 42ms (Views: 39.2ms | ActiveRecord: 0.4ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:52:01 -0300
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:52:02 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:52:02 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:56:35 -0300
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 36ms (Views: 16.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:56:36 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:56:36 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:56:42 -0300
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:56:42 -0300
+ChatChannel stopped streaming from chat_channel
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:56:42 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:56:42 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:59:42 -0300
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:59:42 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:59:42 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started GET "/" for 127.0.0.1 at 2017-08-30 21:59:45 -0300
+Processing by ChatsController#show as HTML
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chats/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 0.5ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:59:45 -0300
+ChatChannel stopped streaming from chat_channel
+Started GET "/cable" for 127.0.0.1 at 2017-08-30 21:59:45 -0300
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 21:59:45 -0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-08-30 22:02:13 -0300
+ChatChannel stopped streaming from chat_channel
